@@ -3,58 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Time</title>
+    <title>Coffee Time - Tu momento, tu café</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #f8f3ed;
-            color: #3e2723;
-        }
-        
-        header { 
-            background: #6f4e37; 
-            color: white; 
-            padding: 40px 20px; 
-            text-align: center; 
-        }
-        
-        header h1 { font-size: 3em; margin-bottom: 10px; }
-        
-        .contenido {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .card {
-            background: white;
-            padding: 30px;
-            margin: 20px 0;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .btn {
-            background: #6f4e37;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        
-        footer {
-            background: #3e2723;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
+        body { font-family: 'Arial', sans-serif; background: #f8f3ed; color: #3e2723; line-height: 1.6; }
+        header { background: #6f4e37; color: white; padding: 30px 20px; text-align: center; }
+        header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        nav { background: #3e2723; padding: 15px; text-align: center; position: sticky; top: 0; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        .card { background: white; padding: 30px; margin: 25px 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h2 { color: #6f4e37; margin-bottom: 20px; text-align: center; }
+        .menu-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #ddd; }
+        .menu-item:last-child { border-bottom: none; }
+        .precio { font-weight: bold; color: #6f4e37; }
+        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .galeria img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+        .btn { background: #6f4e37; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; display: block; margin: 20px auto 0; }
+        form input, form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
+        footer { background: #3e2723; color: white; text-align: center; padding: 30px 20px; margin-top: 50px; }
+        .social a { color: white; margin: 0 10px; font-size: 1.5em; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -62,23 +30,63 @@
         <h1>☕ Coffee Time</h1>
         <p>Tu momento, tu café</p>
     </header>
-    
-    <div class="contenido">
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container" id="inicio">
         <div class="card">
             <h2>Bienvenidos a Coffee Time</h2>
-            <p>Somos tu cafetería de confianza. Café de especialidad, postres caseros y el mejor ambiente para disfrutar.</p>
-            <button class="btn">Ver Menú</button>
+            <p>Somos tu cafetería de confianza. Café de especialidad, postres caseros y el mejor ambiente para disfrutar solo o acompañado. Abierto desde 2024 para endulzar tus días.</p>
         </div>
-        
+
+        <div class="card" id="menu">
+            <h2>📋 Nuestro Menú</h2>
+            <div class="menu-item"><span>Espresso</span><span class="precio">$2.50</span></div>
+            <div class="menu-item"><span>Capuccino</span><span class="precio">$3.50</span></div>
+            <div class="menu-item"><span>Latte Vainilla</span><span class="precio">$4.00</span></div>
+            <div class="menu-item"><span>Frappé de Oreo</span><span class="precio">$5.00</span></div>
+            <div class="menu-item"><span>Torta de Chocolate</span><span class="precio">$3.00</span></div>
+            <div class="menu-item"><span>Cheesecake</span><span class="precio">$3.50</span></div>
+        </div>
+
+        <div class="card" id="nosotros">
+            <h2>☕ Sobre Nosotros</h2>
+            <p>Trabajamos con granos 100% arábica de las mejores fincas de Venezuela. Nuestro barista tiene 8 años de experiencia. Creemos que un buen café puede cambiar tu día.</p>
+            <div class="galeria">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500" alt="Taza de café">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500" alt="Cafetería">
+                <img src="https://images.unsplash.com/photo-1498804103079-a543d9b4da10?w=500" alt="Postre">
+            </div>
+        </div>
+
         <div class="card">
-            <h2>Horarios</h2>
-            <p>Lunes a Viernes: 7:00 AM - 8:00 PM</p>
-            <p>Sábados y Domingos: 8:00 AM - 9:00 PM</p>
+            <h2>⏰ Horarios</h2>
+            <p style="text-align:center;"><strong>Lunes a Viernes:</strong> 7:00 AM - 8:00 PM<br>
+            <strong>Sábados y Domingos:</strong> 8:00 AM - 9:00 PM</p>
+        </div>
+
+        <div class="card" id="contacto">
+            <h2>📱 Contáctanos</h2>
+            <p style="text-align:center;"><strong>WhatsApp:</strong> +58 412-1234567<br>
+            <strong>Ubicación:</strong> Av. Principal, Caracas</p>
+            <form>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
         </div>
     </div>
-    
+
     <footer>
-        <p>Coffee Time © 2026 | Hecho con ☕</p>
-    </footer>
-</body>
-</html>
+        <div class="social">
+            <a href="#">📷 Instagram</a>
+            <a href="#">📘 Facebook</a>
+            <a href="#">📱 WhatsApp</a>
+        </div>
+        
