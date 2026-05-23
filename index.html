@@ -3,83 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Emprendimiento - Proyecto de Grado</title>
+    <title>Coffee Time</title>
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial;}
-        body {background: #f4f4f4;}
-        .login-page {height: 100vh; display: flex; justify-content: center; align-items: center; background: #2c3e50;}
-        .login-box {background: white; padding: 40px; border-radius: 10px; text-align: center; width: 90%; max-width: 400px;}
-        .login-box input {width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;}
-        .login-box button {width: 100%; padding: 12px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;}
-        .main-page {display: none;}
-        nav {background: #34495e; padding: 15px; position: sticky; top: 0;}
-        nav a {color: white; margin: 0 15px; text-decoration: none;}
-        section {padding: 60px 20px; max-width: 1000px; margin: auto;}
-        h1, h2 {margin-bottom: 20px; color: #2c3e50;}
-        .banner {background: #3498db; color: white; padding: 100px 20px; text-align: center;}
-        footer {background: #2c3e50; color: white; text-align: center; padding: 20px;}
-        @media (max-width: 600px) {nav a {display: block; margin: 10px 0;}}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #f8f3ed;
+            color: #3e2723;
+        }
+        
+        header { 
+            background: #6f4e37; 
+            color: white; 
+            padding: 40px 20px; 
+            text-align: center; 
+        }
+        
+        header h1 { font-size: 3em; margin-bottom: 10px; }
+        
+        .contenido {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn {
+            background: #6f4e37;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        footer {
+            background: #3e2723;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
-
-<!-- PÁGINA 1: LOGIN POR CORREO -->
-<div class="login-page" id="loginPage">
-    <div class="login-box">
-        <h2>Bienvenido a [Tu Emprendimiento]</h2>
-        <p>Ingresa tu correo para continuar</p>
-        <input type="email" id="emailInput" placeholder="tu@correo.com" required>
-        <button onclick="entrar()">Entrar al sitio</button>
+    <header>
+        <h1>☕ Coffee Time</h1>
+        <p>Tu momento, tu café</p>
+    </header>
+    
+    <div class="contenido">
+        <div class="card">
+            <h2>Bienvenidos a Coffee Time</h2>
+            <p>Somos tu cafetería de confianza. Café de especialidad, postres caseros y el mejor ambiente para disfrutar.</p>
+            <button class="btn">Ver Menú</button>
+        </div>
+        
+        <div class="card">
+            <h2>Horarios</h2>
+            <p>Lunes a Viernes: 7:00 AM - 8:00 PM</p>
+            <p>Sábados y Domingos: 8:00 AM - 9:00 PM</p>
+        </div>
     </div>
-</div>
-
-<!-- PÁGINA 2: WEB PRINCIPAL -->
-<div class="main-page" id="mainPage">
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Sobre Nosotros</a>
-        <a href="#productos">Productos</a>
-        <a href="#galeria">Galería</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <section id="inicio" class="banner">
-        <h1>NOMBRE DE TU EMPRENDIMIENTO</h1>
-        <h3>"Tu eslogan aquí"</h3>
-        <p>Breve descripción del proyecto en 2 líneas</p>
-    </section>
-
-    <section id="nosotros">
-        <h2>2. Sobre Nosotros</h2>
-        <p><strong>Quiénes somos:</strong> Explica aquí</p>
-        <p><strong>Cómo nació la idea:</strong> Cuenta la historia</p>
-        <p><strong>Misión:</strong> Tu misión</p>
-        <p><strong>Visión:</strong> Tu visión</p>
-        <p><strong>Valores:</strong> Responsabilidad, Calidad, etc.</p>
-    </section>
-
-    <section id="productos">
-        <h2>3. Productos / Servicios</h2>
-        <p><strong>Qué vendemos:</strong> Describe</p>
-        <p><strong>Características:</strong> Lista 3 características</p>
-        <p><strong>Beneficios:</strong> Por qué te conviene</p>
-        <img src="https://via.placeholder.com/300" alt="Producto" style="max-width:100%;">
-    </section>
-
-    <section id="galeria">
-        <h2>4. Galería</h2>
-        <p>Fotos de productos o trabajos realizados</p>
-        <img src="https://via.placeholder.com/300" alt="Galeria 1" style="max-width:45%; margin:5px;">
-        <img src="https://via.placeholder.com/300" alt="Galeria 2" style="max-width:45%; margin:5px;">
-    </section>
-
-    <section id="contacto">
-        <h2>5. Contacto</h2>
-        <p><strong>Correo:</strong> tu@correo.com</p>
-        <p><strong>Teléfono:</strong> 300 123 4567</p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/57TUNUMERO">Escríbenos</a></p>
-        <p><strong>Redes:</strong> 
-            <a href="#">Instagram</a> | 
-            <a href="#">Facebook</a>
-        </p>
-        <p><strong>Ubicación:</strong> Tu ciudad.
+    
+    <footer>
+        <p>Coffee Time © 2026 | Hecho con ☕</p>
+    </footer>
+</body>
+</html>
