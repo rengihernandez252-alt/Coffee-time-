@@ -3,90 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Time - Tu momento, tu café</title>
+    <title>Coffee Time - Donde el tiempo sabe mejor</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; background: #f8f3ed; color: #3e2723; line-height: 1.6; }
-        header { background: #6f4e37; color: white; padding: 30px 20px; text-align: center; }
-        header h1 { font-size: 2.5em; margin-bottom: 10px; }
-        nav { background: #3e2723; padding: 15px; text-align: center; position: sticky; top: 0; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        header { background: #6f4e37; color: white; padding: 40px 20px; text-align: center; }
+        .logo { width: 100px; height: 100px; background: #fff; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: #6f4e37; font-weight: bold; }
+        .banner-img { width: 100%; max-width: 800px; height: 300px; background: #ddd; border-radius: 15px; margin: 20px auto; display: flex; align-items: center; justify-content: center; color: #666; }
+        header h1 { font-size: 2.8em; margin: 10px 0; }
+        header .eslogan { font-size: 1.3em; font-style: italic; }
+        nav { background: #3e2723; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; }
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         .card { background: white; padding: 30px; margin: 25px 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        h2 { color: #6f4e37; margin-bottom: 20px; text-align: center; }
-        .menu-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #ddd; }
-        .menu-item:last-child { border-bottom: none; }
-        .precio { font-weight: bold; color: #6f4e37; }
+        h2 { color: #6f4e37; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #6f4e37; padding-bottom: 10px; }
+        h3 { color: #6f4e37; margin: 20px 0 10px 0; }
+        .placeholder { background: #f0f0f0; padding: 20px; border: 2px dashed #ccc; border-radius: 8px; margin: 10px 0; text-align: center; color: #666; }
+        .producto-img { width: 100%; height: 250px; background: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; margin: 15px 0; }
         .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .galeria img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
-        .btn { background: #6f4e37; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; display: block; margin: 20px auto 0; }
+        .galeria .cuadro-img { width: 100%; height: 200px; background: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; }
+        .btn { background: #6f4e37; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; display: inline-block; margin: 10px 5px; text-decoration: none; }
         form input, form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
         footer { background: #3e2723; color: white; text-align: center; padding: 30px 20px; margin-top: 50px; }
-        .social a { color: white; margin: 0 10px; font-size: 1.5em; text-decoration: none; }
+        .social a { color: white; margin: 0 10px; font-size: 1.2em; text-decoration: none; }
+        .precio { font-weight: bold; color: #6f4e37; font-size: 1.2em; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>☕ Coffee Time</h1>
-        <p>Tu momento, tu café</p>
+    <!-- 1. PORTADA -->
+    <header id="inicio">
+        <div class="logo">LOGO</div>
+        <h1>Coffee Time</h1>
+        <p class="eslogan">Donde el tiempo sabe mejor</p>
+        <div class="banner-img">IMAGEN PRINCIPAL</div>
+        <a href="#servicios" class="btn">Ver Menú ☕</a>
     </header>
 
     <nav>
         <a href="#inicio">Inicio</a>
-        <a href="#menu">Menú</a>
         <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
-    <div class="container" id="inicio">
-        <div class="card">
-            <h2>Bienvenidos a Coffee Time</h2>
-            <p>Somos tu cafetería de confianza. Café de especialidad, postres caseros y el mejor ambiente para disfrutar solo o acompañado. Abierto desde 2024 para endulzar tus días.</p>
-        </div>
-
-        <div class="card" id="menu">
-            <h2>📋 Nuestro Menú</h2>
-            <div class="menu-item"><span>Espresso</span><span class="precio">$2.50</span></div>
-            <div class="menu-item"><span>Capuccino</span><span class="precio">$3.50</span></div>
-            <div class="menu-item"><span>Latte Vainilla</span><span class="precio">$4.00</span></div>
-            <div class="menu-item"><span>Frappé de Oreo</span><span class="precio">$5.00</span></div>
-            <div class="menu-item"><span>Torta de Chocolate</span><span class="precio">$3.00</span></div>
-            <div class="menu-item"><span>Cheesecake</span><span class="precio">$3.50</span></div>
-        </div>
-
+    <div class="container">
+        <!-- 2. SOBRE NOSOTROS -->
         <div class="card" id="nosotros">
-            <h2>☕ Sobre Nosotros</h2>
-            <p>Trabajamos con granos 100% arábica de las mejores fincas de Venezuela. Nuestro barista tiene 8 años de experiencia. Creemos que un buen café puede cambiar tu día.</p>
+            <h2>Sobre Nosotros</h2>
+            
+            <h3>¿Quiénes somos?</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>¿Cómo nació la idea?</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>Misión</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>Visión</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>Valores del emprendimiento</h3>
+            <div class="placeholder">0</div>
+        </div>
+
+        <!-- 3. SERVICIOS -->
+        <div class="card" id="servicios">
+            <h2>Servicios</h2>
+            
+            <h3>¿Qué vendemos?</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>Características</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>Beneficios</h3>
+            <div class="placeholder">0</div>
+            
+            <h3>Imágenes del producto</h3>
+            <div class="producto-img">CUADRO PARA IMAGEN DEL PRODUCTO</div>
+            
+            <h3>Precios</h3>
+            <div class="placeholder">0</div>
+        </div>
+
+        <!-- 4. GALERÍA -->
+        <div class="card" id="galeria">
+            <h2>Galería</h2>
+            
+            <h3>Fotos del producto</h3>
             <div class="galeria">
-                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500" alt="Taza de café">
-                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500" alt="Cafetería">
-                <img src="https://images.unsplash.com/photo-1498804103079-a543d9b4da10?w=500" alt="Postre">
+                <div class="cuadro-img">IMAGEN 1</div>
+                <div class="cuadro-img">IMAGEN 2</div>
             </div>
+            
+            <h3>Descripción</h3>
+            <div class="placeholder">0</div>
         </div>
 
-        <div class="card">
-            <h2>⏰ Horarios</h2>
-            <p style="text-align:center;"><strong>Lunes a Viernes:</strong> 7:00 AM - 8:00 PM<br>
-            <strong>Sábados y Domingos:</strong> 8:00 AM - 9:00 PM</p>
-        </div>
-
+        <!-- 5. CONTACTO -->
         <div class="card" id="contacto">
-            <h2>📱 Contáctanos</h2>
-            <p style="text-align:center;"><strong>WhatsApp:</strong> +58 412-1234567<br>
-            <strong>Ubicación:</strong> Av. Principal, Caracas</p>
-            <form>
-                <input type="text" placeholder="Tu nombre" required>
-                <input type="email" placeholder="Tu correo" required>
-                <textarea placeholder="Tu mensaje" rows="4" required></textarea>
-                <button type="submit" class="btn">Enviar Mensaje</button>
-            </form>
+            <h2>Contacto</h2>
+            
+            <h3>Información</h3>
+            <p><strong>Nombre:</strong> 0</p>
+            <p><strong>Correo electrónico:</strong> 0</p>
+            <p><strong>Teléfonos:</strong> 0</p>
+            
+            <h3>Redes sociales</h3>
+            <div class="social">
+                <a href="#">📷 Instagram</a>
+                <a href="#">📘 Facebook</a>
+                <a href="#">📱 WhatsApp</a>
+                <a href="#">🎵 TikTok</a>
+            </div>
+            
+            <h3>Formulario de contacto</h3>
+            <div class="placeholder">0</div>
+        </div>
+
+        <!-- 6. NOS UBICAMOS -->
+        <div class="card">
+            <h2>Nos Ubicamos</h2>
+            <h3>Dirección</h3>
+            <div class="placeholder">0</div>
         </div>
     </div>
 
+    <!-- 7. FOOTER REDES SOCIALES -->
     <footer>
         <div class="social">
             <a href="#">📷 Instagram</a>
             <a href="#">📘 Facebook</a>
             <a href="#">📱 WhatsApp</a>
+            <a href="#">🎵 TikTok</a>
         </div>
-        
+        <p style="margin-top:15px;">Coffee Time © 2026 | Donde el tiempo sabe mejor ☕</p>
+    </footer>
+</body>
+</html>
