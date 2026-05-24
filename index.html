@@ -6,33 +6,289 @@
     <title>Coffee Time - Donde el tiempo sabe mejor</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Arial', sans-serif; background: #f8f3ed; color: #3e2723; line-height: 1.6; }
-        header { background: #6f4e37; color: white; padding: 40px 20px; text-align: center; }
-        .logo { width: 100px; height: 100px; background: #fff; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: #6f4e37; font-weight: bold; }
-        .banner-img { width: 100%; max-width: 800px; height: 300px; background: #ddd; border-radius: 15px; margin: 20px auto; display: flex; align-items: center; justify-content: center; color: #666; }
-        header h1 { font-size: 2.8em; margin: 10px 0; }
-        header .eslogan { font-size: 1.3em; font-style: italic; }
-        nav { background: #3e2723; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
-        nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: bold; }
+        
+        html {
+            scroll-behavior: smooth; /* Scroll suave cuando das click al menú */
+        }
+        
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: #f8f3ed; 
+            color: #3e2723; 
+            line-height: 1.6; 
+            overflow-x: hidden; /* Evita scroll horizontal por animaciones */
+        }
+
+        /* === ANIMACIONES DE ENTRADA BIEN MELAS === */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes brilloBtn {
+            0% { box-shadow: 0 0 5px rgba(111, 78, 55, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(111, 78, 55, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(111, 78, 55, 0.5); }
+        }
+
+        /* HEADER CON ENTRADA */
+        header { 
+            background: #6f4e37; 
+            color: white; 
+            padding: 40px 20px; 
+            text-align: center; 
+        }
+        
+        header img {
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: zoomIn 0.8s ease-out, flotar 3s ease-in-out 0.8s infinite;
+        }
+        
+        header h1 { 
+            font-size: 2.8em; 
+            margin: 10px 0; 
+            animation: fadeDown 1s ease-out 0.2s backwards;
+        }
+        
+        header p {
+            animation: fadeDown 1s ease-out 0.4s backwards;
+        }
+        
+        header .eslogan { 
+            font-size: 1.3em; 
+            font-style: italic; 
+            animation: fadeDown 1s ease-out 0.6s backwards;
+        }
+        
+        .banner-img { 
+            width: 100%; 
+            max-width: 800px; 
+            height: 300px; 
+            background: #ddd; 
+            border-radius: 15px; 
+            margin: 20px auto; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #666; 
+            animation: fadeUp 1s ease-out 0.8s backwards;
+            transition: transform 0.3s ease;
+        }
+        
+        .banner-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* NAV STICKY CON SOMBRA AL HACER SCROLL */
+        nav { 
+            background: #3e2723; 
+            padding: 15px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            animation: fadeDown 0.8s ease-out;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        nav:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 0 12px; 
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        nav a:hover {
+            color: #c9a961;
+            transform: translateY(-3px);
+        }
+        
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        .card { background: white; padding: 30px; margin: 25px 0; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        h2 { color: #6f4e37; margin-bottom: 20px; text-align: center; border-bottom: 2px solid #6f4e37; padding-bottom: 10px; }
+        
+        /* CARDS CON ENTRADA Y HOVER */
+        .card { 
+            background: white; 
+            padding: 30px; 
+            margin: 25px 0; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: fadeUp 0.8s ease-out backwards;
+            transition: all 0.4s ease;
+        }
+        
+        /* Delay escalonado para que entren una por una */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+        .card:nth-child(5) { animation-delay: 1s; }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(111, 78, 55, 0.2);
+        }
+        
+        h2 { 
+            color: #6f4e37; 
+            margin-bottom: 20px; 
+            text-align: center; 
+            border-bottom: 2px solid #6f4e37; 
+            padding-bottom: 10px; 
+        }
+        
         h3 { color: #6f4e37; margin: 20px 0 10px 0; }
-        .placeholder { background: #f0f0f0; padding: 20px; border: 2px dashed #ccc; border-radius: 8px; margin: 10px 0; text-align: center; color: #666; }
-        .producto-img { width: 100%; height: 250px; background: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; margin: 15px 0; }
-        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .galeria .cuadro-img { width: 100%; height: 200px; background: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #666; }
-        .btn { background: #6f4e37; color: white; padding: 12px 25px; border: none; border-radius: 8px; font-size: 1em; cursor: pointer; display: inline-block; margin: 10px 5px; text-decoration: none; }
-        form input, form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
-        footer { background: #3e2723; color: white; text-align: center; padding: 30px 20px; margin-top: 50px; }
-        .social a { color: white; margin: 0 10px; font-size: 1.2em; text-decoration: none; }
+        
+        .placeholder { 
+            background: #f0f0f0; 
+            padding: 20px; 
+            border: 2px dashed #ccc; 
+            border-radius: 8px; 
+            margin: 10px 0; 
+            text-align: center; 
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .placeholder:hover {
+            background: #e8e8e8;
+            border-color: #6f4e37;
+        }
+        
+        .producto-img { 
+            width: 100%; 
+            height: 250px; 
+            background: #ddd; 
+            border-radius: 10px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #666; 
+            margin: 15px 0;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .producto-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .galeria { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 15px; 
+            margin-top: 20px; 
+        }
+        
+        .galeria .cuadro-img { 
+            width: 100%; 
+            height: 200px; 
+            background: #ddd; 
+            border-radius: 10px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: #666;
+            transition: all 0.4s ease;
+        }
+        
+        .galeria .cuadro-img:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* BOTÓN ANIMADO MELO */
+        .btn { 
+            background: #6f4e37; 
+            color: white; 
+            padding: 12px 25px; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1em; 
+            cursor: pointer; 
+            display: inline-block; 
+            margin: 10px 5px; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: fadeUp 1s ease-out 1s backwards;
+        }
+        
+        .btn:hover { 
+            background: #3e2723;
+            transform: scale(1.1);
+            animation: brilloBtn 1.5s infinite;
+        }
+        
+        form input, form textarea { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        form input:focus, form textarea:focus {
+            border-color: #6f4e37;
+            outline: none;
+            box-shadow: 0 0 8px rgba(111, 78, 55, 0.3);
+        }
+        
+        footer { 
+            background: #3e2723; 
+            color: white; 
+            text-align: center; 
+            padding: 30px 20px; 
+            margin-top: 50px;
+            animation: fadeUp 1s ease-out 1.2s backwards;
+        }
+        
+        .social a { 
+            color: white; 
+            margin: 0 10px; 
+            font-size: 1.2em; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .social a:hover {
+            color: #c9a961;
+            transform: translateY(-5px) scale(1.2);
+        }
+        
         .precio { font-weight: bold; color: #6f4e37; font-size: 1.2em; }
     </style>
 </head>
 <body>
     <!-- 1. PORTADA -->
 <header id="inicio">
-    <img src="logo.png" alt="Coffee Time Logo" style="width: 100px; height: 100px; border-radius: 50%">
+    <img src="logo.png" alt="Coffee Time Logo">
     <h1>Coffee Time</h1>
     <p>Disfruta de una experiencia única en cada taza.</p>
     <p class="eslogan">Donde el tiempo sabe mejor</p>
@@ -51,19 +307,14 @@
         <!-- 2. SOBRE NOSOTROS -->
         <div class="card" id="nosotros">
             <h2>Sobre Nosotros</h2>
-            
             <h3>¿Quiénes somos?</h3>
             <div class="placeholder">0</div>
-            
             <h3>¿Cómo nació la idea?</h3>
             <div class="placeholder">0</div>
-            
             <h3>Misión</h3>
             <div class="placeholder">0</div>
-            
             <h3>Visión</h3>
             <div class="placeholder">0</div>
-            
             <h3>Valores del emprendimiento</h3>
             <div class="placeholder">0</div>
         </div>
@@ -71,19 +322,14 @@
         <!-- 3. SERVICIOS -->
         <div class="card" id="servicios">
             <h2>Servicios</h2>
-            
             <h3>¿Qué vendemos?</h3>
             <div class="placeholder">0</div>
-            
             <h3>Características</h3>
             <div class="placeholder">0</div>
-            
             <h3>Beneficios</h3>
             <div class="placeholder">0</div>
-            
             <h3>Imágenes del producto</h3>
             <div class="producto-img">CUADRO PARA IMAGEN DEL PRODUCTO</div>
-            
             <h3>Precios</h3>
             <div class="placeholder">0</div>
         </div>
@@ -91,13 +337,11 @@
         <!-- 4. GALERÍA -->
         <div class="card" id="galeria">
             <h2>Galería</h2>
-            
             <h3>Fotos del producto</h3>
             <div class="galeria">
                 <div class="cuadro-img">IMAGEN 1</div>
                 <div class="cuadro-img">IMAGEN 2</div>
             </div>
-            
             <h3>Descripción</h3>
             <div class="placeholder">0</div>
         </div>
@@ -105,12 +349,10 @@
         <!-- 5. CONTACTO -->
         <div class="card" id="contacto">
             <h2>Contacto</h2>
-            
             <h3>Información</h3>
-            <p><strong>Nombre:Juan Sebastian Garcia Osorio</strong> </p>
-            <p><strong>Correo electrónico:coffetime877@gmail.com</strong> </p>
-            <p><strong>Teléfonos:3117602332</strong> </p>
-            
+            <p><strong>Nombre: Juan Sebastian Garcia Osorio</strong> </p>
+            <p><strong>Correo electrónico: coffetime877@gmail.com</strong> </p>
+            <p><strong>Teléfonos: 3117602332</strong> </p>
             <h3>Redes sociales</h3>
             <div class="social">
                 <a href="#">📷 Instagram</a>
@@ -118,7 +360,6 @@
                 <a href="#">📱 WhatsApp</a>
                 <a href="#">🎵 TikTok</a>
             </div>
-            
             <h3>Formulario de contacto</h3>
             <div class="placeholder">nombre</div>
         </div>
