@@ -8,7 +8,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html {
-            scroll-behavior: smooth; /* Scroll suave cuando das click al menú */
+            scroll-behavior: smooth;
         }
         
         body { 
@@ -16,10 +16,9 @@
             background: #f8f3ed; 
             color: #3e2723; 
             line-height: 1.6; 
-            overflow-x: hidden; /* Evita scroll horizontal por animaciones */
+            overflow-x: hidden;
         }
 
-        /* === ANIMACIONES DE ENTRADA BIEN MELAS === */
         @keyframes fadeDown {
             from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
@@ -47,7 +46,6 @@
             100% { box-shadow: 0 0 5px rgba(111, 78, 55, 0.5); }
         }
 
-        /* HEADER CON ENTRADA */
         header { 
             background: #6f4e37; 
             color: white; 
@@ -98,7 +96,6 @@
             transform: scale(1.02);
         }
 
-        /* NAV STICKY CON SOMBRA AL HACER SCROLL */
         nav { 
             background: #3e2723; 
             padding: 15px; 
@@ -130,7 +127,6 @@
         
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         
-        /* CARDS CON ENTRADA Y HOVER */
         .card { 
             background: white; 
             padding: 30px; 
@@ -141,7 +137,6 @@
             transition: all 0.4s ease;
         }
         
-        /* Delay escalonado para que entren una por una */
         .card:nth-child(1) { animation-delay: 0.2s; }
         .card:nth-child(2) { animation-delay: 0.4s; }
         .card:nth-child(3) { animation-delay: 0.6s; }
@@ -172,6 +167,7 @@
             text-align: center; 
             color: #666;
             transition: all 0.3s ease;
+            min-height: 60px;
         }
         
         .placeholder:hover {
@@ -222,7 +218,6 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
         
-        /* BOTÓN ANIMADO MELO */
         .btn { 
             background: #6f4e37; 
             color: white; 
@@ -286,7 +281,6 @@
     </style>
 </head>
 <body>
-    <!-- 1. PORTADA -->
 <header id="inicio">
     <img src="logo.png" alt="Coffee Time Logo">
     <h1>Coffee Time</h1>
@@ -304,37 +298,34 @@
     </nav>
 
     <div class="container">
-        <!-- 2. SOBRE NOSOTROS -->
         <div class="card" id="nosotros">
             <h2>Sobre Nosotros</h2>
             <h3>¿Quiénes somos?</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>¿Cómo nació la idea?</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>Misión</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>Visión</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>Valores del emprendimiento</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
         </div>
 
-        <!-- 3. SERVICIOS -->
         <div class="card" id="servicios">
             <h2>Servicios</h2>
             <h3>¿Qué vendemos?</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>Características</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>Beneficios</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
             <h3>Imágenes del producto</h3>
             <div class="producto-img">CUADRO PARA IMAGEN DEL PRODUCTO</div>
             <h3>Precios</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
         </div>
 
-        <!-- 4. GALERÍA -->
         <div class="card" id="galeria">
             <h2>Galería</h2>
             <h3>Fotos del producto</h3>
@@ -343,16 +334,15 @@
                 <div class="cuadro-img">IMAGEN 2</div>
             </div>
             <h3>Descripción</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
         </div>
 
-        <!-- 5. CONTACTO -->
         <div class="card" id="contacto">
             <h2>Contacto</h2>
             <h3>Información</h3>
-            <p><strong>Nombre: Juan Sebastian Garcia Osorio</strong> </p>
-            <p><strong>Correo electrónico: coffetime877@gmail.com</strong> </p>
-            <p><strong>Teléfonos: 3117602332</strong> </p>
+            <p><strong>Nombre:</strong> Juan Sebastian Garcia Osorio</p>
+            <p><strong>Correo electrónico:</strong> coffetime877@gmail.com</p>
+            <p><strong>Teléfonos:</strong> 3117602332</p>
             <h3>Redes sociales</h3>
             <div class="social">
                 <a href="#">📷 Instagram</a>
@@ -361,18 +351,16 @@
                 <a href="#">🎵 TikTok</a>
             </div>
             <h3>Formulario de contacto</h3>
-            <div class="placeholder">nombre</div>
+            <div class="placeholder"></div>
         </div>
 
-        <!-- 6. NOS UBICAMOS -->
         <div class="card">
             <h2>Nos Ubicamos</h2>
             <h3>Dirección</h3>
-            <div class="placeholder">0</div>
+            <div class="placeholder"></div>
         </div>
     </div>
 
-    <!-- 7. FOOTER REDES SOCIALES -->
     <footer>
         <div class="social">
             <a href="#">📷 Instagram</a>
@@ -383,4 +371,4 @@
         <p style="margin-top:15px;">Coffee Time © 2026 | Donde el tiempo sabe mejor ☕</p>
     </footer>
 </body>
-</html>
+                </html>  
