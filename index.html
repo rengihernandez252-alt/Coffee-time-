@@ -18,7 +18,7 @@ header img{width:100px;height:100px;border-radius:50%;border:3px solid #fff;anim
 header h1{font-size:2.8em;margin:10px 0;animation:fadeDown 1s ease-out .2s backwards}
 header p{animation:fadeDown 1s ease-out .4s backwards}
 header .eslogan{font-size:1.3em;font-style:italic;animation:fadeDown 1s ease-out .6s backwards}
-.banner-img{width:100%;max-width:800px;height:300px;background:#ddd;border-radius:15px;margin:20px auto;display:flex;align-items:center;justify-content:center;color:#666;animation:fadeUp 1s ease-out .8s backwards;transition:transform .3s ease}
+.banner-img{width:100%;max-width:800px;height:300px;border-radius:15px;margin:20px auto;display:block;object-fit:cover;animation:fadeUp 1s ease-out .8s backwards;transition:transform .3s ease}
 .banner-img:hover{transform:scale(1.02)}
 nav{background:#3e2723;padding:15px;text-align:center;position:sticky;top:0;z-index:100;animation:fadeDown .8s ease-out;transition:box-shadow .3s ease}
 nav:hover{box-shadow:0 4px 15px rgba(0,0,0,.3)}
@@ -36,7 +36,7 @@ h2{color:#6f4e37;margin-bottom:20px;text-align:center;border-bottom:2px solid #6
 h3{color:#6f4e37;margin:20px 0 10px 0}
 .placeholder{background:#f0f0f0;padding:20px;border:2px dashed #ccc;border-radius:8px;margin:10px 0;text-align:left;color:#3e2723;transition:all .3s ease;min-height:60px}
 .placeholder:hover{background:#e8e8e8;border-color:#6f4e37}
-.producto-img{width:100%;height:250px;background:#ddd;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#666;margin:15px 0;transition:all .4s ease;overflow:hidden;object-fit:cover}
+.producto-img{width:100%;height:250px;border-radius:10px;margin:15px 0;transition:all .4s ease;overflow:hidden;object-fit:cover}
 .producto-img:hover{transform:scale(1.03);box-shadow:0 5px 20px rgba(0,0,0,.2)}
 .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin-top:20px}
 .galeria .cuadro-img{width:100%;height:200px;background:#ddd;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#666;transition:all .4s ease}
@@ -57,7 +57,7 @@ footer{background:#3e2723;color:#fff;text-align:center;padding:30px 20px;margin-
 <h1>Coffee Time</h1>
 <p>Disfruta de una experiencia única en cada taza.</p>
 <p class="eslogan">Donde el tiempo sabe mejor</p>
-<div class="banner-img">IMAGEN PRINCIPAL</div>
+<img src="banner-cafe.jpg" alt="Grano de café Coffee Time" class="banner-img">
 <a href="#servicios" class="btn">Ver Menú ☕</a>
 </header>
 <nav>
